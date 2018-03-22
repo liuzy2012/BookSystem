@@ -19,7 +19,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="container"> 
 	<div class="row">
 		<div class="col-sm-12">
 			<h3 class="text-center">
