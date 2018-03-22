@@ -20,7 +20,7 @@
 </head>
 <body>
 <div class="container"> 
-	<div class="row">
+	<div class="row"> 
 		<div class="col-sm-12">
 			<h3 class="text-center">
 				图书系统管理员端
