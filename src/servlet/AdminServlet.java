@@ -32,6 +32,7 @@ public class AdminServlet extends HttpServlet{
 		ArrayList<book> books=bookbiz.searchAllBook(pb);
 		//获得总页数
 		int pageCount=pb.getTotalPage();
+		//将book集合和页面数跳转至admin.jsp页面
 		req.setAttribute("bookslist", books);
 		req.setAttribute("pagesize", pageCount);
 		req.getRequestDispatcher("web/admin.jsp").forward(req, rep);

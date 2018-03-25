@@ -17,6 +17,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
+
 </head>
 <body>
 <div class="container"> 
@@ -58,27 +59,28 @@
 	      					</td>
 	      					<td>
 	      						<p>
-	      						
-	      						<c:if test="${book['bk_borrowed']}==1">
+	      						<c:if test="${book['bk_borrowed']==1}">
 	      							<c:out value="已借出"></c:out>
 	      						</c:if>
-	      						<c:if test="${book['bk_borrowed']}==0">
+	      						<c:if test="${book['bk_borrowed']==0}">
 	      							<c:out value="未借出"></c:out>
 	      						</c:if>
 	      						</p>
 	      					</td>
 	      					<td>
-	      						<p id="bookname">${book['bk_name']}</p>
+	      						<p id="bookauthor">${book['bk_author']}</p>
 	      					</td>
 	      					<td>
-	      						<p id="bookname">${bk['bk_category']}</p>
+	      						<p id="bookcategory">${book['bk_category']}</p>
 	      					</td>
 	      					<td>
-	      						<p id="bookname">${book['bk_intro']}</p>
+	      						<p id="bookintro">${book['bk_intro']}</p>
 	      					</td>
 	      					<td>
 	      						<div class="btn-group-vertical">
-									<button class="btn btn-primary" type="button">编辑</button> <button class="btn btn-primary" type="button">删除</button>
+									<!-- <a class="btn btn-primary" type="button" href="bookServlet?bookid=${book['bk_id']}" onclick="saveBook(${book['bk_id']})">编辑</a> -->
+									<a class="btn btn-primary" type="button" href="bookServlet?bookid=${book['bk_id']}" >编辑</a>
+									<a class="btn btn-primary" type="button">删除</a>
 								</div>
 	      					</td>
                    	    </tr>
@@ -86,7 +88,7 @@
 					</tbody>
 					</table>
 				<ul class="pagination">
-				  <li><a href="adminServlet?page=${param.page-1}" <c:if test="${param.page==1}">class="btn disabled"</c:if>>&laquo;</a></li>
+				  <li><a href="adminServlet?page=${param.page-1}" <c:if test="${param.page==1||param.page==null}">class="btn disabled"</c:if>>&laquo;</a></li>
 				  <c:forEach var="i" begin="1" end="${pagesize}">
 				  	<li id="bookitem"><a href="adminServlet?page=<c:out value='${i}'/>" <c:if test="${i==param.page}">class="btn disabled"</c:if>><c:out value="${i}"/></a></li>
 				  </c:forEach>
@@ -95,7 +97,7 @@
 				</div>
 				<div class="col-sm-2">
 					<form class="form-search">
-						<input class="form-control" type="text" /> <button type="submit" class="btn">查找</button>
+						<input class="form-control" type="text" /> <button type="submit" class="btn"></button>
 					</form>
 				</div>
 			</div>

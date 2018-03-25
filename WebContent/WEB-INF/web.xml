@@ -20,6 +20,14 @@
   	<servlet-name>AdminServlet</servlet-name>
   	<url-pattern>/adminServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+  	<servlet-name>BookServlet</servlet-name>
+  	<servlet-class>servlet.BookServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>BookServlet</servlet-name>
+  	<url-pattern>/bookServlet</url-pattern>
+  </servlet-mapping>
   <jsp-config>  
         <taglib>  
             <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>  

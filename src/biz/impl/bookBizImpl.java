@@ -21,5 +21,15 @@ public class bookBizImpl implements bookBiz{
 		// TODO Auto-generated method stub
 		return bookdao.getTotalCount();
 	}
+	@Override
+	public boolean editBook(int bookid,String bookintro,int bookbor) {
+		return bookdao.editBook(bookid,bookintro,bookbor);
+	}
+	@Override
+	public book getBookById(int bookid) {
+		// TODO Auto-generated method stub
+		book bk=bookdao.getBookById(bookid);
+		return bk;
+	}
 
 }
