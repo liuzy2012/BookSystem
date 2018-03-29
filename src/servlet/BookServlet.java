@@ -26,7 +26,6 @@ public class BookServlet extends HttpServlet{
 				//req.getRequestDispatcher("bookServlet?bookid="+bookid).forward(req, rep);
 				PrintWriter out=rep.getWriter();
 				out.println("success");
-				System.out.println("更新成功！");
 			}
 		}
 		else {

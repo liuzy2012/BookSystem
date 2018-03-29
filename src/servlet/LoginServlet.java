@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import biz.AdminBiz;
 import biz.impl.AdminBizImpl;
@@ -18,10 +19,15 @@ public class LoginServlet extends HttpServlet {
 		//实例化Biz接口
 		AdminBiz adminBiz=new AdminBizImpl();
 		Boolean result=adminBiz.adminLogin(adname, adpassword);
-		PrintWriter pWriter=response.getWriter();
-		if(result==true)
-			pWriter.println("<h2>Login Success!</h2>");
-		else
-			pWriter.println("<h2>Login Error!</h2>");
+		response.setContentType("text/html;charset=UTF-8");
+		if(result==true) {
+			//request.getRequestDispatcher("adminServlet").forward(request, response);
+			HttpSession session=request.getSession();
+			session.setAttribute("logined", "logd");
+			response.sendRedirect("adminServlet");
+		}
+		else {
+			request.getRequestDispatcher("web/AdminLogin.jsp").forward(request, response);
+		}
 	}
 }

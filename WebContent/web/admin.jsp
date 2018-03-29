@@ -97,7 +97,7 @@
 				</div>
 				<div class="col-sm-2">
 					<form class="form-search">
-						<input class="form-control" type="text" /> <button type="submit" class="btn"></button>
+						<input class="form-control" type="text" /> <button type="submit" class="btn">搜索</button>
 					</form>
 				</div>
 			</div>

@@ -28,6 +28,22 @@
   	<servlet-name>BookServlet</servlet-name>
   	<url-pattern>/bookServlet</url-pattern>
   </servlet-mapping>
+  <filter>
+  	<filter-name>logFilter</filter-name>
+  	<filter-class>servlet.LogFilter</filter-class>
+  	<init-param>
+            <param-name>logPath</param-name>
+            <param-value>web/AdminLogin.jsp</param-value>
+     </init-param>
+  </filter>
+   	<filter-mapping>
+        <filter-name>logFilter</filter-name>
+        <url-pattern>/adminServlet</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>logFilter</filter-name>
+        <url-pattern>/bookServlet</url-pattern>
+    </filter-mapping>
   <jsp-config>  
         <taglib>  
             <taglib-uri>http://java.sun.com/jstl/fmt</taglib-uri>  
