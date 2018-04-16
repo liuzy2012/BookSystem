@@ -35,6 +35,6 @@ public class AdminServlet extends HttpServlet{
 		//将book集合和页面数跳转至admin.jsp页面
 		req.setAttribute("bookslist", books);
 		req.setAttribute("pagesize", pageCount);
-		req.getRequestDispatcher("web/admin.jsp").forward(req, rep);
+		req.getRequestDispatcher("web/admin/admin.jsp").forward(req, rep);
 	}
 }

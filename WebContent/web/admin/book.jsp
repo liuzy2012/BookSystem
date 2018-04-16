@@ -24,6 +24,7 @@
 				},
 				success:function(msg){
 					alert("更新成功！");
+					window.location.href="adminServlet"
 				}
 		});
 	}

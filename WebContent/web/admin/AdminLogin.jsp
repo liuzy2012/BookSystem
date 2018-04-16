@@ -18,35 +18,35 @@
 		});
 	});*/
 </script>
+<style type="text/css">
+	#con{
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:10%;
+	}
+</style>
 </head>
 <body> 
-<div class="continer">上
-	<div style="margin:0 auto">
-		<h2 class="text-center">图书管理系统</h2>
+<div id="con">
+		<h2 class="text-center">图书管理系统-管理端</h2>
 		<form class="form-horizontal" role="form" action="/BookSystem/adminLoginServlet" method="post">
-			
-			<div class="form-group">
-	     	<label for="username" class="col-sm-2 control-label">用户名：</label>
-	     	<div class="col-sm-5">
-	        	<input type="text" class="form-control" name="adname" id="adname" 
-	            	placeholder="请输入用户名">
-	      	</div>
-	      	</div>
-	      	<div class="form-group">
-	     	<label for="password" class="col-sm-2 control-label">密码：</label>
-	     	<div class="col-sm-5">
-	        	<input type="password" class="form-control" name="password" id="password" 
-	            	placeholder="请输入密码">
-	      	</div>
-	      	</div>
-	      	<div class="form-group">
-	      		<div class="col-sm-offset-2 col-sm-10">
-	      			<input type="submit" class="btn btn-default" id="sub" value="登录"/>
-	      		</div>
-	      	</div>
-	   
+				<div class="form-group">
+			     	<div class="col-md-4 col-md-offset-4">
+			        	<input type="text" class="form-control" name="adname" id="adname" 
+			            	placeholder="请输入用户名">
+			      	</div>
+		      	</div>
+		      	<div class="form-group">
+			     	<div class="col-md-4 col-md-offset-4">
+			        	<input type="password" class="form-control" name="password" id="password" 
+			            	placeholder="请输入密码">
+			      	</div>
+		      	</div>
+		      		<div class="col-md-4 col-md-offset-4">
+				      	<label>记住密码:</label><input type="checkbox"/>
+				      	<input type="submit" class="btn btn-success col-md-2" value="登录"/>
+			      	</div>
 		</form>
-	</div>
 </div>
 </body>
 </html>

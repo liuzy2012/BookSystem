@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.List;
 
 import dao.bookDao;
 import pojo.PageBean;
@@ -148,6 +149,12 @@ public class bookDaoImpl implements bookDao{
 			myDB.closeResource(conn, st, rs);
 		}
 		return bk;
+	}
+
+	@Override
+	public List<book> searchBook(String bookName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 

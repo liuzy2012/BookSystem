@@ -29,11 +29,12 @@ public class LogFilter implements Filter{
 		HttpServletResponse response=(HttpServletResponse) rep;
 		HttpSession session=request.getSession();
 		//如果session中有logined，则证明过滤成功
+		System.out.println("正在过滤...");
 		if(session.getAttribute("logined")!=null) {
 			filc.doFilter(req, rep);
 		}
 		else
-			response.sendRedirect("web/AdminLogin.jsp");
+			response.sendRedirect("AdminLogin.jsp");
 	}
 
 	@Override

@@ -27,7 +27,12 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("adminServlet");
 		}
 		else {
-			request.getRequestDispatcher("web/AdminLogin.jsp").forward(request, response);
+			/*
+			 * 如果账号密码错误将会重新跳转至登录页登录
+			 * */
+			PrintWriter out=response.getWriter();
+			out.print("<script>alert('账号或密码错误！');window.location.href='web/admin/AdminLogin.jsp'</script>");
+			//request.getRequestDispatcher("web/admin/AdminLogin.jsp").forward(request, response);
 		}
 	}
 }

@@ -18,6 +18,7 @@ public class BookServlet extends HttpServlet{
 		int bookid=Integer.parseInt(req.getParameter("bookid"));
 		bookBiz bookbiz=new bookBizImpl();
 		book bk=bookbiz.getBookById(bookid);
+		//修改书籍状态
 		if(req.getParameter("method")!=null&&req.getParameter("method").equals("update")) {
 			int borrow=Integer.parseInt(req.getParameter("borrow"));
 			String intro=req.getParameter("intro");
@@ -31,7 +32,7 @@ public class BookServlet extends HttpServlet{
 		else {
 			//将获取到的book数据发送并跳转至book.jsp页面
 			req.setAttribute("bk", bk);
-			req.getRequestDispatcher("web/book.jsp?bookid="+bookid).forward(req, rep);
+			req.getRequestDispatcher("web/admin/book.jsp?bookid="+bookid).forward(req, rep);
 		}
 	}
 }
